@@ -1,22 +1,19 @@
-document.getElementById('theme-button').addEventListener('click', function () {
-  document.body.classList.toggle('night-theme')
-})
 
-var themeButtonEnabled = parseInt(window.localStorage.getItem('theme-button'))
-
-if (themeButtonEnabled === null) {
-  themeButtonEnabled = 0
-} else {
-  themeButtonEnabled = parseInt(themeButtonEnabled)
+var themeChangeButton = document.getElementById('theme-button')
+var night = document.body.setAttribute('class', 'nightTheme')
+var updateTheme = function () {
+  night.body.setAttribute('class', 'nightTheme')
 }
+themeChangeButton.addEventListener('click', updateTheme)
 
+// when browsing sites, window alert and the page show visited time
 var timesVisited = window.localStorage.getItem('on-load-counter')
-var visitedReminder = document.getElementById('counter')
-
 if (timesVisited === null) {
   timesVisited = 0
 }
 
 timesVisited++
 window.localStorage.setItem('on-load-counter', timesVisited)
-window.alert('Hi, you have visit ' + timesVisited + ' times.')
+window.alert('Hi, you have visited this site ' + timesVisited + ' times.')
+
+document.getElementById('counter').textContent = timesVisited

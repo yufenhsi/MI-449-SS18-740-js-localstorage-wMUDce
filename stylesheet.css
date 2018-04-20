@@ -1,0 +1,16 @@
+.nightTheme {
+  background-color: #383737;
+  color: #fffffc;
+}
+
+.dayTheme {
+  background-color: #fffffc;
+  color: #383737;
+}
+
+#themebutton {
+  font-size: 20px;
+  outline: 0;
+  background-color: #383737;
+  color: #fffffc;
+}
