@@ -1,11 +1,12 @@
 // change background color, based on day-theme or night-theme
 var themeChangeButton = document.getElementById('theme-button')
 var themeSelected = window.localStorage.getItem('theme-display')
+document.body.setAttribute('class', themeSelected)
 var updateTheme = function () {
   var bodyClass = document.body.getAttribute('class')
   if (bodyClass === 'dayTheme') {
     document.body.setAttribute('class', 'nightTheme')
-    window.localStorage.setItem('theme-display', themeSelected)
+    window.localStorage.setItem('theme-display', 'nightTheme')
   } else {
     document.body.setAttribute('class', 'dayTheme')
     window.localStorage.setItem('theme-display', 'dayTheme')
